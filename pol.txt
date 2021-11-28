@@ -1,0 +1,30 @@
+polybar|notice:  Parsing config file: /home/becker/.config/polybar/config/config
+polybar|error: Invalid value for "bar/mainbar.monitor", using default value (reason: Environment var ${MONITOR} does not exist (no fallback set))
+polybar|error: Invalid value for "module/wired-network.format-connected-foreground", using default value (reason: The reference ${colors.purple} does not exist (no fallback set))
+polybar|error: Disabling module "wired-network" (reason: Invalid network interface "enp2s0")
+polybar|notice:  pulseaudio: using default sink alsa_output.pci-0000_00_1f.3.analog-stereo
+polybar|error: Disabling module "date" (reason: Missing section "module/date")
+polybar|notice:  Loaded font "berry:style=Sans:size=10" (name=Bitstream Vera Sans, offset=4, file=/usr/share/fonts/truetype/ttf-bitstream-vera/Vera.ttf)
+polybar|notice:  Loaded font "berry:style=Sans:size=10" (name=Bitstream Vera Sans, offset=4, file=/usr/share/fonts/truetype/ttf-bitstream-vera/Vera.ttf)
+polybar|notice:  Loaded font "berry:style=Sans:size=10" (name=Bitstream Vera Sans, offset=4, file=/usr/share/fonts/truetype/ttf-bitstream-vera/Vera.ttf)
+polybar|warn:  Dropping unmatched character  (U+f1e6) in ' | 100 |'
+polybar|warn:  Dropping unmatched character ─ (U+2500) in '────────'
+polybar|warn:  Dropping unmatched character ─ (U+2500) in '────────'
+polybar|warn:  Dropping unmatched character ─ (U+2500) in '────────'
+polybar|warn:  Dropping unmatched character ─ (U+2500) in '────────'
+polybar|warn:  Dropping unmatched character ─ (U+2500) in '────────'
+polybar|warn:  Dropping unmatched character ─ (U+2500) in '────────'
+polybar|warn:  Dropping unmatched character ─ (U+2500) in '────────'
+polybar|warn:  Dropping unmatched character ─ (U+2500) in '────────'
+polybar|warn:  Dropping unmatched character ─ (U+2500) in '─'
+polybar|warn:  Dropping unmatched character  (U+f1e6) in ' | 100 |'
+polybar|warn:  Dropping unmatched character ─ (U+2500) in '────────'
+polybar|warn:  Dropping unmatched character ─ (U+2500) in '────────'
+polybar|warn:  Dropping unmatched character ─ (U+2500) in '────────'
+polybar|warn:  Dropping unmatched character ─ (U+2500) in '────────'
+polybar|warn:  Dropping unmatched character ─ (U+2500) in '────────'
+polybar|warn:  Dropping unmatched character ─ (U+2500) in '────────'
+polybar|warn:  Dropping unmatched character ─ (U+2500) in '────────'
+polybar|warn:  Dropping unmatched character ─ (U+2500) in '────────'
+polybar|warn:  Dropping unmatched character ─ (U+2500) in '─'
+polybar|notice:  Termination signal received, shutting down...
