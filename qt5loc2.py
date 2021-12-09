@@ -53,42 +53,41 @@ class Example(QMainWindow):
 			print("pog")
 		self.name = fout
 		#WHY THE HELL DID I DO THIS OVER HERE, THIS NAME VARIABLE SHOULD BE IN RUN. eh whatever i blame OOP, i dont care enough to move it.
-		path = os.path.join('/tmp', 'ls.txt')
-		print(self.name)
-		file = open(path, "w")
-		file.write(self.name)
-		self.qlabel.setText(name)
-		barw = "sh ~/code/appLauncher/barupdate.sh"
-		subprocess.run(barw, shell=True)
-		pid = """cd /tmp && ls | grep "polybar" | sed 's/[^0-9]//g'"""
-		pidc = subprocess.check_output(pid, shell=True).decode('ascii')
-		print(pidc)
-		path = os.path.join('/tmp', 'ls.txt')
-		print(path)
-		file = open(path, "w")
 		a = ""
-
-		check = "Name="
-		string = self.name
-		b = string.splitlines()
-		if check in b:
-			print(f'{check} is present in the list')
-		else:
-   			print(f'{check} is not present in the list')
-	
+		b = self.name
+		tmp = tempfile.NamedTemporaryFile()
+		with open(tmp.name, 'w') as f:
+			f.write(b)
+		#use readline for a grep like function
+		with open(tmp.name) as f:
+			for line in f.readlines():
+				if 'Name=' in line:
+					f = io.StringIO()
+					print(line, file=f)
+					break
+					
 		try:
 			a = f.getvalue()
 		except Exception as e:
 			print("p o g")
-		exec = a.replace("Name=", "")
-		file.write(self.name)
-		barr = "echo hook:module/demo1 >>/tmp/polybar_mqueue.*"
-		barw = f"echo hook:module/demo2 >>/tmp/polybar_mqueue.*"
+		b = a.replace("Name=", "")
+		exec = re.sub(r'(\s|\u180B|\u200B|\u200C|\u200D|\u2060|\uFEFF)+', '', b)
+
+		barr = "echo hook:module/ipc1 >>/tmp/polybar_mqueue.*"
 		subprocess.run(barr, shell=True)
-		subprocess.run(barw, shell=True)
 		print(exec)
-
-
+		path = os.path.join('/tmp', 'ls.txt')
+		file = open(path, "w")
+		file.write(exec)
+		file.close
+		fileclean = "cd /tmp && cat ls.txt | sed '/^$/d;s/[[:blank:]]//g'"
+		pid = "polybar-msg -p $pid hook ipc 1"
+		pidr = os.popen(pid)
+		print(pidr)
+		pidw = "sh ~/code/appLauncher/barupdate.sh"
+		os.system(fileclean)
+		os.system(pidw)
+		
 
 
 	def run(self):
@@ -102,7 +101,7 @@ class Example(QMainWindow):
 			for line in f.readlines():
 				if 'Exec=' in line:
 					f = io.StringIO()
-					print(line, file=f)
+				print(line, file=f)
 		a = f.getvalue()
 		exec = a.replace("Exec=", "")
 		run = subprocess.run(f'{exec} & disown', shell=True)
